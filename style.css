@@ -1,0 +1,91 @@
+html,body{
+    width:100%;
+    height:100%;
+    margin:0;
+    overflow:hidden;
+}
+
+.sky{
+    position:relative;
+    height:40%;
+    background:skyblue;
+}
+
+.grass{
+    position:relative;
+    height:30%;
+    background:seagreen;
+}
+
+.road{
+    height:30%;
+    position:relative;
+    background:dimgrey;
+    border-top:10px solid grey;
+    border-bottom:10px solid grey;
+}
+
+.lines{
+    position:absolute;
+    border-top:17px dashed white;
+    width:100%;
+    top:45%;   
+}
+.mario{
+    position:absolute;
+    top:-7.6%;
+    animation:anime 6s ease-out infinite normal,
+              jump 0.3s 1s ease;
+    animation-fill-mode:forwards;
+    transform:scale(1.3);
+}
+@keyframes anime{
+    from{transform:translateX(-200px) scale(1.3)}
+    to{transform:translateX(1500px) scale(1.3)}
+}
+
+.luigi{
+    position:absolute;
+    top:59%;
+    animation-name:anime2;
+    animation-duration:4s;
+    animation-iteration-count:infinite;
+    animation-timing-function:ease;
+    animation-direction:alternate;
+    transform:scale(1.25);
+}
+@keyframes anime2{
+    from{transform:translateX(-100px) scale(1.25)}
+    to{transform:translateX(1500px) scale(1.25)}
+}
+
+.cloud1{
+    position:absolute;
+    top:10%;
+    left:8%;
+    width:140px;
+    height:110px;
+    animation:wind1 50s ease infinite normal;
+    opacity:0.84;
+}
+.cloud2{
+    position:relative;
+    top:20%;
+    left:40%;
+    opacity:0.66;
+    animation:wind2 35s ease-out infinite;
+}
+
+@keyframes wind1{
+    from{transform:translateX(-40px)}
+    to{transform:translateX(100%)}
+}
+@keyframes wind2{
+    from{transform:translateX(0px)}
+    to{transform:translateX(100%)}
+}
+@keyframes jump{
+    0%{top:-20px}
+    50%{top:-40px}
+    100%{top:-20px}
+}
